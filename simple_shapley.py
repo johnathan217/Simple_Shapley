@@ -39,15 +39,13 @@ def main():
 
     owner_shapley = n_workers * (owner_worker_value - worker_value) / 2
 
-    # Prints the results.
-    # print("Worker Shapley = " + str(worker_shapley))
-    # print("Owner Shapley = " + str(owner_shapley))
-
+    # Formats the output of the calculation.
     x = (
         "Worker Shapley = " + str(worker_shapley),
         "Owner Shapley = " + str(owner_shapley)
     )
 
+    # Writes a json file, and adds the calculation output to it.
     file = open("shapley.json", "w")
     file.write(json.dumps(x, indent=2))
     file.close()
